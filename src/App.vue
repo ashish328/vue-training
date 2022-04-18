@@ -1,17 +1,25 @@
 <template>
-  <base-card :message="message.data" class="mx-auto">
+  <base-card :message="message.data" class="mx-auto my-4">
     <button class="p-3 bg-indigo-900 text-white m-4" @click="update">
-      {{count}}
+      update Count
     </button>
-
-    {{countComputed}}
+    <div ref="domRef" >
+     {{countComputed}}
+    </div>
+  </base-card>
+  <base-card class="mx-auto my-4">
+    <div>
+    {{message.data}}
+    </div>
+    <button class="p-3 bg-indigo-900 text-white m-4" @click="updateMessage">
+      update message
+    </button>
   </base-card>
 </template>
 
 <script>
-import { computed, reactive, ref } from 'vue';
+import { computed, reactive, ref, watch, watchEffect, provide } from 'vue';
 import BaseCard from './components/BaseCard.vue'
-// import {computed} from 'vue';
 
 export default {
   name: 'App',
@@ -27,15 +35,36 @@ export default {
 
     const countComputed = computed(() => count.value)
 
+    const domRef = ref(null)
+
     function update() {
       count.value += 1 
     }
+
+    function updateMessage () {
+      message.data = "new message"
+    }
+
+    watch(count, (newVal, oldVal)=> {
+      console.log(newVal, oldVal)
+      console.log(domRef.value.innerText, "my inner text")
+    }, {flush: 'post'})
+
+    watchEffect(() => {
+      console.log("watch effect")
+      console.log(count.value)
+      console.log(message.data)
+    }, {flush: 'pose'})
+
+    provide('message', message.data)
 
     return {
       message,
       count,
       update,
-      countComputed
+      countComputed,
+      updateMessage,
+      domRef
     }
   }
   // provide() {

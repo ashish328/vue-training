@@ -6,12 +6,12 @@
       </div>
       <div>
         <slot></slot>
-        {{message}}
-        {{newMessage}}
+        <!-- {{message}}
+        {{newMessage}} -->
       </div>
       <div>
         <slot name="footer">
-          default footer
+          <!-- default footer -->
         </slot>
       </div>
     </div>
