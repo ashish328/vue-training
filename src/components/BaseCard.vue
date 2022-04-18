@@ -6,6 +6,8 @@
       </div>
       <div>
         <slot></slot>
+        {{message}}
+        {{newMessage}}
       </div>
       <div>
         <slot name="footer">
@@ -13,5 +15,22 @@
         </slot>
       </div>
     </div>
+
+    <grand-child/>
   </div>
 </template>
+
+<script>
+import grandChild from './grandChild.vue'
+export default {
+  props: ['message'],
+  inject: {
+    newMessage: {
+      default: "default message"
+    }
+  },
+  components: {
+    grandChild,
+  }
+}
+</script>
