@@ -29,3 +29,9 @@ branch: [day-3-provide-inject-composition-api-data-compoted-methods](https://git
 
 branch: [day-4-composition-api-watch-provide-inject](https://github.com/ashish328/vue-training/tree/day-4-composition-api-watch-provide-inject)
 1. Composition Api -- watch, watchEffect, provide, inject, ref (attaching ref to dom element).
+
+### Day-5 Topics
+
+branch: [day-5-teleport-composition-api-props-context-lifecycle-hooks](https://github.com/ashish328/vue-training/tree/day-5-teleport-composition-api-props-context-lifecycle-hooks)
+1. Teleport
+2. Composition Api -- props, context, lifecycle hooks
