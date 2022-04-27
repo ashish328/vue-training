@@ -1,7 +1,7 @@
 
 # vue-training
 
-### Day-1 Topics
+### Day-1
 
 1. Intro to vue3.
     1. creat a vue app using ***createApp & mount***
@@ -11,13 +11,13 @@
 3. Directives.
 4. Mixins.
 
-### Day-2 Topics
+### Day-2
 
 branch: [day-2-scoped-slots-watchers](https://github.com/ashish328/vue-training/tree/day-2-scoped-slots-watchers)
 1. Slots, Scoped Slots.
 2. Watchers.
 
-### Day-3 Topics
+### Day-3
 
 branch: [day-3-provide-inject-composition-api-data-compoted-methods](https://github.com/ashish328/vue-training/tree/day-3-provide-inject-composition-api-data-compoted-methods)
 1. Provider, inject.
@@ -25,13 +25,18 @@ branch: [day-3-provide-inject-composition-api-data-compoted-methods](https://git
 2. Vues Reactivity behind the scenes.
 3. Composition Api -- data, computed, methods.
 
-### Day-4 Topics
+### Day-4
 
 branch: [day-4-composition-api-watch-provide-inject](https://github.com/ashish328/vue-training/tree/day-4-composition-api-watch-provide-inject)
 1. Composition Api -- watch, watchEffect, provide, inject, ref (attaching ref to dom element).
 
-### Day-5 Topics
+### Day-5
 
 branch: [day-5-teleport-composition-api-props-context-lifecycle-hooks](https://github.com/ashish328/vue-training/tree/day-5-teleport-composition-api-props-context-lifecycle-hooks)
-1. Teleport
-2. Composition Api -- props, context, lifecycle hooks
+1. Teleport.
+2. Composition Api -- props, context, lifecycle hooks.
+
+### Day-6
+branch: [day-6-suspense-async-components](https://github.com/ashish328/vue-training/tree/day-6-suspense-async-components)
+1. Suspense.
+2. Async Components.
