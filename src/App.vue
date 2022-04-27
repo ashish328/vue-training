@@ -1,16 +1,25 @@
 <template>
   <div class="app">
   <base-card :message="message.data" class="mx-auto my-4">
-    <!-- <button class="p-3 bg-indigo-900 text-white m-4" @click="update">
-      update Count
-    </button>
-    <div ref="domRef" >
-     {{countComputed}}
-    </div> -->
+    <button
+      class="p-2 rounded-md px-9 border-2 border-indigo-900 text-indigo-900 mx-auto my-4"
+      @click="showHeros = !showHeros"
+    >{{showHeros ? "Hide Heros" : "Show Heros"}}</button>
+    <Suspense v-if="showHeros">
+      <template #default>
+        <div>
+          <heros-list #default="user">
+            {{user.firstName}} {{user.lastName}}
+          </heros-list>
+        </div>
+      </template>
 
-    <button @click="toggleModal" class="p-2 rounded-md px-9 border-2 border-indigo-900 text-indigo-900 mx-auto my-4">
-      open modal
-    </button>
+      <template #fallback>
+        <div class="my-4 text-xl">
+          loading heros....
+        </div>
+      </template>
+    </Suspense>
   </base-card>
 
   <Teleport :disabled="fasle" to="body">
@@ -29,15 +38,19 @@
 </template>
 
 <script>
-import { computed, reactive, ref, watch, watchEffect, provide } from 'vue';
+import { computed, reactive, ref, watch, watchEffect, provide, defineAsyncComponent } from 'vue';
 import BaseCard from './components/BaseCard.vue'
 import BaseModel from './components/BaseModel.vue'
+// import HerosList from './components/HerosList.vue'
+
+const HerosList = defineAsyncComponent(() => import('./components/HerosList.vue'))
 
 export default {
   name: 'App',
   components: {
     BaseCard,
-    BaseModel
+    BaseModel,
+    HerosList,
   },
   setup() {
     const message = reactive({
@@ -79,6 +92,11 @@ export default {
       showModal.value = !showModal.value
     }
 
+
+    //async component
+
+    const showHeros = ref(false)
+
     return {
       message,
       count,
@@ -87,7 +105,8 @@ export default {
       updateMessage,
       domRef,
       showModal,
-      toggleModal
+      toggleModal,
+      showHeros
     }
   }
   // provide() {

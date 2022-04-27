@@ -16,12 +16,12 @@
       </div>
     </div>
 
-    <grand-child/>
+    <!-- <grand-child/> -->
   </div>
 </template>
 
 <script>
-import grandChild from './grandChild.vue'
+// import grandChild from './grandChild.vue'
 export default {
   props: ['message'],
   inject: {
@@ -29,8 +29,8 @@ export default {
       default: "default message"
     }
   },
-  components: {
-    grandChild,
-  }
+  // components: {
+  //   grandChild,
+  // }
 }
 </script>
